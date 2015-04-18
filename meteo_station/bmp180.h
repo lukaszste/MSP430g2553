@@ -4,6 +4,7 @@
  *  Created on: 13 kwi 2015
  *      Author: £ukasz
  */
+#include <stdint.h>
 
 #ifndef BMP180_H_
 #define BMP180_H_
@@ -23,8 +24,26 @@
 #define CAL_MD  0xBE
 
 //Varible
+static const uint8_t bmpCalTab[11] = {CAL_AC1, CAL_AC2, CAL_AC3, CAL_AC4, CAL_AC5, CAL_B1, CAL_B2, CAL_MB, CAL_MC, CAL_MD};
 
-static const uint8_t bmpCalTab[11] = {CAL_AC1, CAL_AC2, CAL_AC3, CAL_AC4, CAL_AC5, CAL_B1, CAL_B2, CAL_MB, CAL_MC, CAL_MD}
+enum {
+		TX_IDLE_MODE = 0,
+		TX_FUN_GET_CAL_VAL_1,
+		TX_FUN_GET_CAL_VAL_2,
+}i2c_tx_courent_state;
+
+enum {
+		RX_IDLE_MODE = 0,
+		RX_FUN_GET_CAL_VAL_1,
+		RX_FUN_GET_CAL_VAL_2,
+}i2c_rx_courent_state;
+
+
+//Functions
+
+void inline bmp180init();
+void GetCalibrationVariable();
+
 
 
 

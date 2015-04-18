@@ -1,4 +1,5 @@
 #include <msp430.h> 
+#include "bmp180.h"
 
 /*
  * main.c

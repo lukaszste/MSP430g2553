@@ -1,1 +1,1 @@
-"./main.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
+"./bmp180.obj" "./main.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
